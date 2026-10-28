@@ -275,8 +275,8 @@ function MS:_CommitRunToHistory(run)
         end
     end
 
+    while #MythicScoreboardDB.runs >= cap do _rem(MythicScoreboardDB.runs) end
     _ins(MythicScoreboardDB.runs, 1, serialized)
-    while #MythicScoreboardDB.runs > cap do _rem(MythicScoreboardDB.runs) end
 end
 
 -- Drops the current run without saving. Used to discard the Mythic (diff=23)
